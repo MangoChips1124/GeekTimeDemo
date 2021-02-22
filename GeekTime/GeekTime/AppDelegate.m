@@ -24,18 +24,26 @@
     UIViewController *viewController1 = [[UIViewController alloc] init];
     viewController1.view.backgroundColor = [UIColor redColor];
     viewController1.tabBarItem.title = @"新闻";
+    viewController1.tabBarItem.image = [UIImage imageNamed:@"page"];
+    viewController1.tabBarItem.selectedImage = [UIImage imageNamed:@"page_selected"];
 
     UIViewController *viewController2 = [[UIViewController alloc] init];
     viewController2.view.backgroundColor = [UIColor greenColor];
     viewController2.tabBarItem.title = @"视频";
+    viewController2.tabBarItem.image = [UIImage imageNamed:@"video"];
+    viewController2.tabBarItem.selectedImage = [UIImage imageNamed:@"video_selected"];
     
     UIViewController *viewController3 = [[UIViewController alloc] init];
     viewController3.view.backgroundColor = [UIColor blueColor];
     viewController3.tabBarItem.title = @"推荐";
+    viewController3.tabBarItem.image = [UIImage imageNamed:@"like"];
+    viewController3.tabBarItem.selectedImage = [UIImage imageNamed:@"like_selected"];
     
     UIViewController *viewController4 = [[UIViewController alloc] init];
     viewController4.view.backgroundColor = [UIColor whiteColor];
     viewController4.tabBarItem.title = @"我的";
+    viewController4.tabBarItem.image = [UIImage imageNamed:@"home"];
+    viewController4.tabBarItem.selectedImage = [UIImage imageNamed:@"home_selected"];
     
     [tabBarController setViewControllers:@[viewController1,viewController2,viewController3,viewController4]];
 

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -21,11 +22,14 @@
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
 
-    UIViewController *viewController1 = [[UIViewController alloc] init];
-    viewController1.view.backgroundColor = [UIColor redColor];
-    viewController1.tabBarItem.title = @"新闻";
-    viewController1.tabBarItem.image = [UIImage imageNamed:@"page"];
-    viewController1.tabBarItem.selectedImage = [UIImage imageNamed:@"page_selected"];
+    ViewController *viewController = [[ViewController alloc] init];
+    UINavigationController *navgationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
+//    UIViewController *viewController1 = [[UIViewController alloc] init];
+//    viewController1.view.backgroundColor = [UIColor redColor];
+    navgationController.tabBarItem.title = @"新闻";
+    navgationController.tabBarItem.image = [UIImage imageNamed:@"page"];
+    navgationController.tabBarItem.selectedImage = [UIImage imageNamed:@"page_selected"];
 
     UIViewController *viewController2 = [[UIViewController alloc] init];
     viewController2.view.backgroundColor = [UIColor greenColor];
@@ -45,7 +49,7 @@
     viewController4.tabBarItem.image = [UIImage imageNamed:@"home"];
     viewController4.tabBarItem.selectedImage = [UIImage imageNamed:@"home_selected"];
     
-    [tabBarController setViewControllers:@[viewController1,viewController2,viewController3,viewController4]];
+    [tabBarController setViewControllers:@[navgationController,viewController2,viewController3,viewController4]];
 
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];

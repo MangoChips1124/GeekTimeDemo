@@ -33,7 +33,6 @@
     viewController.navigationItem.title = @"内容";
     viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右侧标题" style:UIBarButtonItemStylePlain target:self action:nil];
     
-    
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

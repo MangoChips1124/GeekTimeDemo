@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
-@interface AppDelegate ()
+@interface AppDelegate () <UITabBarControllerDelegate>
 
 @end
 
@@ -47,13 +47,18 @@
     viewController4.tabBarItem.selectedImage = [UIImage imageNamed:@"home_selected"];
     
     [tabBarController setViewControllers:@[viewController,viewController2,viewController3,viewController4]];
-
+    
+    tabBarController.delegate = self;
     
     UINavigationController *navgationController = [[UINavigationController alloc] initWithRootViewController:tabBarController];
     
     self.window.rootViewController = navgationController;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    NSLog(@"点击了TabBar");
 }
 
 @end
